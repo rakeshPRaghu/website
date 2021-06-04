@@ -80,8 +80,6 @@
 
   .docSidebarContainer {
     width: var(--doc-sidebar-width);
-    /* margin-top: calc(-1 * var(--ifm-navbar-height)); */
-    border-right: 1px solid var(--ifm-toc-border-color);
     will-change: width;
     transition: width var(--ifm-transition-fast) ease;
     clip-path: inset(0);
@@ -143,5 +141,16 @@
     max-width: calc(
       var(--ifm-container-width) - var(--ifm-spacing-horizontal) * 2
     );
+  }
+}
+
+@media (max-width: 767px) {
+  .docPage {
+    display: flex;
+  }
+  .docPage .docMainContainer {
+    padding: 0;
+    width: 95%;
+    margin: 0 auto;
   }
 }

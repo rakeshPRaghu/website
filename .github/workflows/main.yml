@@ -22,7 +22,7 @@ jobs:
         run: npm install request
       - name: Get contributors
         working-directory: ./website
-        run: npm run getContributors
+        run: npm run getTopContributors
       - name: Commit the changes
         run: |
          git status

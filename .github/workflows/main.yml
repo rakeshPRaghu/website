@@ -3,6 +3,9 @@ name: Updates OpenEBS Contributors list
 on:
   schedule:
     - cron: '*/15 * * * *'
+  push:
+    branches: [ revamp-3.0 ]
+    paths: '**/topContributors.json'
 
 jobs:
   resources:

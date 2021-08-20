@@ -2,10 +2,10 @@ name: Updates OpenEBS Contributors list
 
 on:
   schedule:
-    - cron: '0 0 * * *' # will schedule the workflow on every 00:00 UTC
-  push:
-    branches: [ revamp-3.0 ]
-    paths: '**/topContributors.json'
+    - cron: '*/10 * * * *' # will schedule the workflow on every 00:00 UTC
+  #push:
+   # branches: [ revamp-3.0 ]
+   # paths: '**/topContributors.json'
 
 jobs:
   resources:
@@ -30,5 +30,5 @@ jobs:
          git config user.email rakesh.pr@mayadata.io
          git add '*/topContributors.json'
          git log
-         git diff-index --quiet HEAD || (git commit -a -m'[bot] update contributor list' --allow-empty && git push -f origin revamp-3.0)
+         git diff-index --quiet HEAD || (git commit -a -m'[bot] update contributor list' --allow-empty && git push -f)
          

@@ -33,7 +33,7 @@ const EventSlider: React.FC<EventsProps> = ({
   const [filteredEvents, setFilteredEvents] = useState<Events[]>([]);
   useEffect(() => {
     setEvents(eventsList);
-  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+  }, []);
   useEffect(() => {
     /*
      * 1. Using current date to filter the events
@@ -50,7 +50,7 @@ const EventSlider: React.FC<EventsProps> = ({
       if (isNaN(givenDate)) {
         item.isDateAvailable = false;
         recurringEvents.push(item);
-      }else {
+      } else {
         item.isDateAvailable = true;
         eventsWithDate.push(item);
       }
@@ -59,18 +59,18 @@ const EventSlider: React.FC<EventsProps> = ({
       eventsData = filterEvents
         ? eventsWithDate?.filter((event: Events) => new Date(event?.date) >= currentDate)
         : eventsWithDate;
-      
+
       eventsData = sortEvents
         ? eventsData?.sort((eventA: Events, eventB: Events) => {
-            const dateA: any = new Date(eventB?.date);
-            const dateB: any = new Date(eventA?.date);
-            return sortOrder === "asc" ? dateB - dateA : dateB + dateA;
-          })
-        : eventsData;   
+          const dateA: any = new Date(eventB?.date);
+          const dateB: any = new Date(eventA?.date);
+          return sortOrder === "asc" ? dateB - dateA : dateB + dateA;
+        })
+        : eventsData;
     }
     const allEvents = [...eventsData, ...recurringEvents];
-    setFilteredEvents([...allEvents]); 
-  }, [events]); // eslint-disable-line react-hooks/exhaustive-deps
+    setFilteredEvents([...allEvents]);
+  }, [events]);
   const sliderSettings = {
     autoplay: true,
     speed: 500,
@@ -112,7 +112,7 @@ const EventSlider: React.FC<EventsProps> = ({
       </>
     );
   };
- // Kept for future reference
+  // Kept for future reference
   // function checkPastDate(date: any) {
   //   const givenDate = new Date(date);
   //   const currentDate = new Date();
@@ -129,9 +129,9 @@ const EventSlider: React.FC<EventsProps> = ({
                 <div className={classes.slide}>
                   <Box mb={2}>
                     {event.isDateAvailable
-                    ? <FetchDate date={event.date} /> 
-                    :
-                    <p>{event.date}</p>}
+                      ? <FetchDate date={event.date} />
+                      :
+                      <p>{event.date}</p>}
                   </Box>
                   <Typography variant="h4" className={classes.titleText}>
                     {event.title}
@@ -174,7 +174,7 @@ const EventSlider: React.FC<EventsProps> = ({
       height="100%"
     >
       <Typography variant="h4" className={classes.noEventText}>
-      <Link target="_blank" className={classes.noEventLink} href={EXTERNAL_LINKS.CNCF_EVENTS}>{t("community.communityEvents.noEvent.message")}</Link>
+        <Link target="_blank" className={classes.noEventLink} href={EXTERNAL_LINKS.CNCF_EVENTS}>{t("community.communityEvents.noEvent.message")}</Link>
       </Typography>
     </Box>
   );

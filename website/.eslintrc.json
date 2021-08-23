@@ -1,0 +1,54 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": "plugin:react/recommended",
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "multiline-ternary": 0,
+        "no-unused-vars": 0,
+        "no-unused-expressions": "off",
+        "no-shadow": 0,
+        "react/jsx-key": "off",
+        "@typescript-eslint/no-unused-vars": 0,
+        "no-useless-constructor": "off",
+        "@typescript-eslint/no-useless-constructor": "error",
+        "react/no-children-prop": "off",
+        "react-hooks/exhaustive-deps": "off",
+        "react/no-unescaped-entities": "off",
+        "react/prop-types": "off",
+        "react/react-in-jsx-scope": "off",
+        "no-console": [	    
+            0,	
+            {	
+              "allow": ["error"]	
+            }	
+          ],
+        "max-len": [
+            "warn",
+            {
+              "code": 350,
+              "tabWidth": 2,
+              "comments": 250,
+              "ignoreComments": false,
+              "ignoreTrailingComments": true,
+              "ignoreUrls": true,
+              "ignoreStrings": true,
+              "ignoreTemplateLiterals": true,
+              "ignoreRegExpLiterals": true
+            }
+          ]
+    }
+}

@@ -3,7 +3,7 @@ name: Updates OpenEBS Contributor list
 on:
   schedule:
     # Runs at every 00:00
-    - cron: "0 0 * * *"
+    - cron: "*/5 0 * * *"
 
   workflow_dispatch:
 

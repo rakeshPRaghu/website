@@ -26,6 +26,7 @@ jobs:
         run: npm run get-contributors-info
       - name: Commit the changes
         run: |
+          echo ${{ github.event.repository.default_branch }}
           git status
           git config user.name github-actions
           git config user.email test@mayadata.io
